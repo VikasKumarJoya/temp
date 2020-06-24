@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ajax</title>
+</head>
+<body>
+    <button id="button">clickme</button>
+    <div id="text">hello</div>
+    
+    <script>
+    var button=document.getElementById('button');
+    button.addEventListener('click',ajaxFunction);
+
+    function ajaxFunction(){
+
+        var xhr=new XMLHttpRequest();
+        xhr.open('GET','sample.txt',true);
+        xhr.onload = function(){
+            document.querySelector('#text');
+            text.innerHTML=xhr.responseText;
+            console.log(xhr.responseText);
+        }
+        xhr.send();
+    }
+</script>
+</body>
+</html>
